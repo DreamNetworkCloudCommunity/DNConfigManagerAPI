@@ -32,7 +32,7 @@ public class EncodedConfigManager {
             StringBuilder sb = new StringBuilder();
             Scanner scan = new Scanner(this.file);
 
-            while(scan.hasNextLine()){sb.append(scan.nextLine());}
+            while(scan.hasNextLine()){sb.append(scan.nextLine()).append("\n");}
 
             String content = new String(Base64.getDecoder().decode(sb.toString()));
             if(content.length() == 0){this.content = new JSONObject();return;}

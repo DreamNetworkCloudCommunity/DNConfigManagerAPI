@@ -95,7 +95,7 @@ import fr.benjimania74.configmanager.Config;
 import fr.benjimania74.configmanager.ConfigManager;
 import fr.benjimania74.configmanager.EncodedConfigManager;
 
-public class Example extends DreamExtension {
+public class ExampleClass extends DreamExtension {
     public static DNClientAPI clientAPI;
 
     @Override
@@ -130,7 +130,7 @@ public class Example extends DreamExtension {
         super.stop();
     }
 
-    public Main(Addon addon) {
+    public ExampleClass(Addon addon) {
         super(addon);
     }
 }

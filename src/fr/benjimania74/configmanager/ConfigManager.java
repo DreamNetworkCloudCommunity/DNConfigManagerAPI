@@ -35,14 +35,14 @@ public class ConfigManager {
 
     public String read(){return content.toJSONString();}
 
-    public HashMap<Object, Object> getHashMap(String key){return (JSONObject) this.content.get(key);}
-    public List<Object> getList(String key){return (JSONArray) this.content.get(key);}
-    public String getString(String key){return (String) this.content.get(key);}
-    public Integer getInt(String key){return (Integer) this.content.get(key);}
-    public Float getFloat(String key){return (Float) this.content.get(key);}
-    public boolean getBoolean(String key){return (boolean) this.content.get(key);}
+    public HashMap<Object, Object> getHashMap(Object key){return (JSONObject) this.content.get(key);}
+    public List<Object> getList(Object key){return (JSONArray) this.content.get(key);}
+    public String getString(Object key){return (String) this.content.get(key);}
+    public Integer getInt(Object key){return (Integer) this.content.get(key);}
+    public Float getFloat(Object key){return (Float) this.content.get(key);}
+    public boolean getBoolean(Object key){return (boolean) this.content.get(key);}
 
-    public boolean set(String key, Object value){
+    public boolean set(Object key, Object value){
         try{
             this.content.put(key, value);
             return true;
@@ -52,7 +52,7 @@ public class ConfigManager {
         }
     }
 
-    public boolean remove(String key){
+    public boolean remove(Object key){
         try{
             this.content.remove(key);
             return true;
@@ -61,6 +61,9 @@ public class ConfigManager {
             return false;
         }
     }
+
+    public boolean containKey(Object key){return this.content.containsKey(key);}
+    public boolean containValue(Object value){return this.content.containsValue(value);}
 
     public boolean writeDefault(){
         try {

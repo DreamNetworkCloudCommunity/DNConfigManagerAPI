@@ -44,8 +44,8 @@ public class EncodedConfigManager {
 
     public String read(){return content.toJSONString();}
 
-    public HashMap<Object, Object> getHashMap(String key){return (JSONObject) this.content.get(key);}
-    public List<Object> getList(String key){return (JSONArray) this.content.get(key);}
+    public HashMap<Object, Object> getHashMap(String key){return (HashMap<Object, Object>) this.content.get(key);}
+    public List<Object> getList(String key){return (List<Object>) this.content.get(key);}
     public String getString(String key){return (String) this.content.get(key);}
     public Integer getInt(String key){return (Integer) this.content.get(key);}
     public Float getFloat(String key){return (Float) this.content.get(key);}

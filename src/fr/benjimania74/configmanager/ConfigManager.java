@@ -25,7 +25,11 @@ public class ConfigManager {
             StringBuilder sb = new StringBuilder();
             Scanner scan = new Scanner(this.file);
 
-            while(scan.hasNextLine()){sb.append(scan.nextLine()).append("\n");}
+            while(scan.hasNextLine()){sb.append(scan.nextLine());}
+            if(sb.toString().length() == 0){
+                this.content = new JSONObject();
+                return;
+            }
 
             this.content = (JSONObject) new JSONParser().parse(sb.toString());
         }catch (Exception e){e.printStackTrace();}
